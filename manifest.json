@@ -1,0 +1,10 @@
+{
+  "name": "宝宝健康小助手",
+  "short_name": "健康助手",
+  "description": "孩子饮食档案、智能食谱、健康记录与就诊卡",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f3ef",
+  "theme_color": "#0f6e56",
+  "icons": []
+}
