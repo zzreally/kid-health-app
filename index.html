@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#0f6e56">
+<title>宝宝健康小助手</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css?v=20261127a">
+</head>
+<body>
+
+<header class="app-header">
+  <h1 id="page-title">首页</h1>
+  <button class="gear" onclick="switchTab('settings')" aria-label="设置">⚙</button>
+</header>
+
+<main id="app">
+  <section class="page active" id="page-home"></section>
+  <section class="page" id="page-recipe"></section>
+  <section class="page" id="page-diet"></section>
+  <section class="page" id="page-health"></section>
+  <section class="page" id="page-opinions"></section>
+  <section class="page" id="page-edu"></section>
+  <section class="page" id="page-sport"></section>
+  <section class="page" id="page-card"></section>
+  <section class="page" id="page-settings"></section>
+</main>
+
+<nav class="tabbar">
+  <button data-tab="home" class="active" onclick="switchTab('home')"><span class="ti">🏠</span><span>首页</span></button>
+  <button data-tab="recipe" onclick="switchTab('recipe')"><span class="ti">🍲</span><span>食谱</span></button>
+  <button data-tab="diet" onclick="switchTab('diet')"><span class="ti">🥗</span><span>饮食</span></button>
+  <button data-tab="health" onclick="switchTab('health')"><span class="ti">🩺</span><span>健康</span></button>
+  <button data-tab="opinions" onclick="switchTab('opinions')"><span class="ti">💡</span><span>观点库</span></button>
+  <button data-tab="edu" onclick="switchTab('edu')"><span class="ti">🎓</span><span>教育</span></button>
+  <button data-tab="sport" onclick="switchTab('sport')"><span class="ti">🤸</span><span>运动</span></button>
+  <button data-tab="card" onclick="switchTab('card')"><span class="ti">🪪</span><span>就诊卡</span></button>
+  <button data-tab="settings" onclick="switchTab('settings')"><span class="ti">⚙</span><span>设置</span></button>
+</nav>
+
+<script src="js/data.js?v=20261127a"></script>
+<script src="js/storage.js?v=20261127a"></script>
+<!-- 隐私配置：本文件被 .gitignore 挡住不上传 GitHub，只在你的设备本地存在 -->
+<script src="js/local-config.js"></script>
+<script src="js/app.js?v=20261127a"></script>
+<script>
+// 页面标题跟随 tab
+const TITLES = { home: "宝宝健康小助手", recipe: "智能食谱", diet: "饮食档案", health: "健康记录", opinions: "科普观点库", edu: "教育观点与大纲", sport: "运动与居家陪玩", card: "极简就诊卡", settings: "设置与备份" };
+const _switchTab = switchTab;
+switchTab = function (tab) {
+  _switchTab(tab);
+  document.getElementById("page-title").textContent = TITLES[tab] || "";
+};
+</script>
+</body>
+</html>
