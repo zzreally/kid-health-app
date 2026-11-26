@@ -1,0 +1,6 @@
+# 隐私文件：孩子个人信息，绝不上传
+js/local-config.js
+
+# 系统文件
+.DS_Store
+Thumbs.db
